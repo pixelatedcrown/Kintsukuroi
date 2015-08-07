@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: fe6b3bf140ae379408804aed63e5cba4
+timeCreated: 1437067044
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: gold1
+    100002: gold10
+    100004: gold11
+    100006: gold12
+    100008: gold2
+    100010: gold3
+    100012: gold4
+    100014: gold5
+    100016: gold6
+    100018: gold7
+    100020: gold8
+    100022: gold9
+    100024: shard1
+    100026: shard10
+    100028: shard11
+    100030: shard12
+    100032: shard2
+    100034: shard3
+    100036: shard4
+    100038: shard5
+    100040: shard6
+    100042: shard7
+    100044: shard8
+    100046: shard9
+    100048: //RootNode
+    400000: gold1
+    400002: gold10
+    400004: gold11
+    400006: gold12
+    400008: gold2
+    400010: gold3
+    400012: gold4
+    400014: gold5
+    400016: gold6
+    400018: gold7
+    400020: gold8
+    400022: gold9
+    400024: shard1
+    400026: shard10
+    400028: shard11
+    400030: shard12
+    400032: shard2
+    400034: shard3
+    400036: shard4
+    400038: shard5
+    400040: shard6
+    400042: shard7
+    400044: shard8
+    400046: shard9
+    400048: //RootNode
+    2300000: gold1
+    2300002: gold10
+    2300004: gold11
+    2300006: gold12
+    2300008: gold2
+    2300010: gold3
+    2300012: gold4
+    2300014: gold5
+    2300016: gold6
+    2300018: gold7
+    2300020: gold8
+    2300022: gold9
+    2300024: shard1
+    2300026: shard10
+    2300028: shard11
+    2300030: shard12
+    2300032: shard2
+    2300034: shard3
+    2300036: shard4
+    2300038: shard5
+    2300040: shard6
+    2300042: shard7
+    2300044: shard8
+    2300046: shard9
+    3300000: gold1
+    3300002: gold10
+    3300004: gold11
+    3300006: gold12
+    3300008: gold2
+    3300010: gold3
+    3300012: gold4
+    3300014: gold5
+    3300016: gold6
+    3300018: gold7
+    3300020: gold8
+    3300022: gold9
+    3300024: shard1
+    3300026: shard10
+    3300028: shard11
+    3300030: shard12
+    3300032: shard2
+    3300034: shard3
+    3300036: shard4
+    3300038: shard5
+    3300040: shard6
+    3300042: shard7
+    3300044: shard8
+    3300046: shard9
+    4300000: shard1
+    4300002: gold1
+    4300004: shard2
+    4300006: gold2
+    4300008: shard3
+    4300010: gold3
+    4300012: shard4
+    4300014: gold4
+    4300016: shard5
+    4300018: gold5
+    4300020: shard6
+    4300022: gold6
+    4300024: shard7
+    4300026: gold7
+    4300028: shard8
+    4300030: gold8
+    4300032: shard9
+    4300034: gold9
+    4300036: shard10
+    4300038: gold10
+    4300040: shard11
+    4300042: gold11
+    4300044: shard12
+    4300046: gold12
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VesselScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\DeletePlayerPrefs.cs" Line="16" Column="31" />
+      <File FileName="Assets\Scripts\GameModes.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\GlobalValues.cs" Line="12" Column="34" />
+      <File FileName="Assets\Scripts\MusicScript.cs" Line="272" Column="3" />
+      <File FileName="Assets\Scripts\UIScript.cs" Line="155" Column="28" />
+      <File FileName="Assets\Scripts\VesselScript.cs" Line="969" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

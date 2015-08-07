@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 88e36e4d940f1d94fb18de6770b33cf9
+timeCreated: 1437067043
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: gold1
+    100004: gold2
+    100006: gold3
+    100008: gold4
+    100010: gold5
+    100012: gold6
+    100014: shard1
+    100016: shard2
+    100018: shard3
+    100020: shard4
+    100022: shard5
+    100024: shard6
+    400000: //RootNode
+    400002: gold1
+    400004: gold2
+    400006: gold3
+    400008: gold4
+    400010: gold5
+    400012: gold6
+    400014: shard1
+    400016: shard2
+    400018: shard3
+    400020: shard4
+    400022: shard5
+    400024: shard6
+    2300000: //RootNode
+    2300002: gold1
+    2300004: gold2
+    2300006: gold3
+    2300008: gold4
+    2300010: gold5
+    2300012: gold6
+    2300014: shard1
+    2300016: shard2
+    2300018: shard3
+    2300020: shard4
+    2300022: shard5
+    2300024: shard6
+    3300000: //RootNode
+    3300002: gold1
+    3300004: gold2
+    3300006: gold3
+    3300008: gold4
+    3300010: gold5
+    3300012: gold6
+    3300014: shard1
+    3300016: shard2
+    3300018: shard3
+    3300020: shard4
+    3300022: shard5
+    3300024: shard6
+    4300000: s9_fish
+    4300002: shard1
+    4300004: gold1
+    4300006: shard2
+    4300008: gold2
+    4300010: shard3
+    4300012: gold3
+    4300014: shard4
+    4300016: gold4
+    4300018: shard5
+    4300020: gold5
+    4300022: shard6
+    4300024: gold6
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
