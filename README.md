@@ -2,7 +2,7 @@
 An Android Experiment game inspired by the Japanese art of Kintsukuroi
 By Chelsea Saunders (pixelatedcrown) with music by Clark Powell
 
-This project was built with Unity 5 - select "Open Other" from the inital Unity screen and select the included 
+This project was built with Unity 5 - select "Open Other" from the initial Unity screen and select the included 
 "unity" folder as the folder.
 
 Locations of interest:
