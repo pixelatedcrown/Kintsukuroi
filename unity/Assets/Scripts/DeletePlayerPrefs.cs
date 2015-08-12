@@ -1,19 +1,15 @@
-﻿using System;
+﻿// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+
+// DeletePlayerPrefs is strictly for deleting player preferences when it comes to deleting save data
+// Nothing else!
+
+using System;
 using UnityEngine;
 
 public class DeletePlayerPrefs : MonoBehaviour
 {
-	public bool deleteCompletedLevels;
-	
-	public bool deleteCompletedTimedLevels;
-	
-	public bool deleteLevelTimes;
-	
-	public bool deleteWinMessage;
-	
-	public static bool clearTimes;
-	
-	public static bool clearData;
+	public bool deleteCompletedLevels, deleteCompletedTimedLevels, deleteLevelTimes, deleteWinMessage;
+	public static bool clearTimes, clearData;
 	
 	private void Start()
 	{

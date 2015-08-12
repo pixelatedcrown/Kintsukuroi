@@ -1,4 +1,9 @@
-﻿using System;
+﻿// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+
+// GameModes controls the differences between Normal and Timed gameplay modes
+// If normal, hide timed mode stuff. If Timed, show timed mode stuff.
+
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+
+// GlobalValues is used for holding variables that are shared across scripts
+// Controls loading data and clearing times too
+
+using System;
 using UnityEngine;
 
 public class GlobalValues : MonoBehaviour

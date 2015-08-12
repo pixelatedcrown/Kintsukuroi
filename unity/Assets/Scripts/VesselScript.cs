@@ -1,3 +1,8 @@
+// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+	
+// VesselScript deals with the vessels, namely during gameplay as well as gameplay itself
+// Pretty much anything to do with the vessels is handled here
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -5,86 +10,37 @@ using System.Collections.Generic;
 
 public class VesselScript : MonoBehaviour {
 
-	// set in inspector
-	public List<GameObject> allVessels, allShadows, allTitleVessels;
-	public List<GameObject> allVesselsNS, allShadowsNS;
+	// public
+	public static bool newStartingVessel, newVessel, clearVessel, dragging = false, vesselIsMoving;
+	public static int currentSlotCount;
+	public List<int> tetrisRot; // 1 -> 0 / 2 - > 90 / 3 -> 180 / 4 -> 270
+	public List<Vector3> explosionDirections;
 	public List<Transform> pieceMenuSlots;
+	public GameObject currentVessel, currentShadow, touchPlane, bobPoint, depthSliderMenu, emptyPrefab, 
+	titleEffects, titleVessels, cameraPoint, levelBG;
+	public List<GameObject> allVessels, allShadows, allTitleVessels, allVesselsNS, allShadowsNS, currentPieces, 
+	currentGoldPieces, empties, titleVesselPieces, shelvedPieces, placedPieces;
 	public AudioSource gameAudiosource;
-	public AudioClip ding;
-	public GameObject touchPlane, bobPoint, depthSliderMenu, emptyPrefab;
+	public AudioClip ding, sfxDrag, sfxRotate, sfxPutBack, sfxSlide;
 	public Animator bobPointAnimator;
 	public Text levelText, pieceText;
 	public Light directionalLight;
 	public Camera mainCam;
 	public Material mainMat, rimMat, shadowMat, titleShadowMat;
-	
-	// set during runtime
-	public GameObject currentVessel, currentShadow;
-	public List<GameObject> currentPieces, currentGoldPieces, empties;
-	public List<GameObject> shelvedPieces, placedPieces;
-	
-	public int totalPieces;
-	public int freePieces; //public to alter in inspector
-	public int fingerCount = 0; //public for viewing in inspector
-
-	// vessel rotation
-	private float rotationRate = 0.5f;
-	public bool wasRotating;
-	private int touchesNeeded;
-
-	// piece rotation
-	public List<int> tetrisRot; // 1 -> 0 / 2 - > 90 / 3 -> 180 / 4 -> 270
-	private int tetrisAdd;
-	
-	public int currentPiecesLeft;
-
-	//accessible across scripts
-	public static bool newStartingVessel, newVessel, clearVessel, dragging = false, vesselIsMoving;
-	private bool piecesPicked = false;
-
-	private GameObject dragged, draggedSlot;
-	
-	private int random;
-	
-	private Vector3 dragPos;
-	private float dragPosZ, shadowAlpha;
-	
-	private AudioSource audioSource;
-	private bool hasDung;
-	
-	private bool canPlace, bobCheck;
-	private GameObject placeablePiece;
-	public Vector3 placeablePiecePos, placeablePieceRot;
-	
-	private float dist;
 	public Plane plane;
-	private bool onShadow;
 
-	public float distanceToPlace;
-
-	private bool startExplodeTimer, explodePieces, startPickTitleScreenVessels = true, startCycle, isCycling, endCycle;
-	private float explodeTimer;
-	private int cycleIndex, currentSlotNumber;
-	public GameObject titleEffects, titleVessels, cameraPoint;
-	public List<GameObject> titleVesselPieces;
-	public List<Vector3> explosionDirections;
-
-	private bool startTouchTimer, startCanPlaceCountdown;
-	private float touchTime, tapLength = 0.8f, offset = 1f, canPlaceTimer;
-
-	private bool freezeTouch;
-
-	public bool tapped;
-	private GameObject touched;
-
-	public AudioClip sfxDrag, sfxRotate, sfxPutBack, sfxSlide;
-
-	public GameObject currentTitleVessel;
-
-	public GameObject levelBG;
-
-	public static int currentSlotCount;
-
+	// private
+	private bool wasRotating, hasDung, canPlace, bobCheck, onShadow, startExplodeTimer, explodePieces, 
+	startPickTitleScreenVessels = true, startCycle, isCycling, endCycle, startTouchTimer, startCanPlaceCountdown,
+	freezeTouch, tapped, piecesPicked = false;
+	private int totalPieces, freePieces, fingerCount = 0, currentPiecesLeft, touchesNeeded, tetrisAdd, random,
+	cycleIndex, currentSlotNumber;
+	private float rotationRate = 0.5f, dragPosZ, shadowAlpha, dist, explodeTimer, touchTime, tapLength = 0.8f, 
+	offset = 1f, canPlaceTimer, distanceToPlace;
+	private Vector3 dragPos, placeablePiecePos, placeablePieceRot;
+	private GameObject dragged, draggedSlot, placeablePiece, touched, currentTitleVessel;
+	private AudioSource audioSource;
+	
 	void Start ()
 	{
 		// prepares vessel and shadow models
@@ -652,6 +608,7 @@ public class VesselScript : MonoBehaviour {
 	
 	public void ClearVessel()
 	{
+		// when called, remove a vessel from the scene and reset variables
 		if (currentVessel != null)
 		{
 			currentVessel.SetActive(false);
@@ -680,6 +637,8 @@ public class VesselScript : MonoBehaviour {
 				}
 			}
 			piecesPicked = false;
+
+			// exit animation
 			bobPointAnimator.SetBool("none", false);
 			bobPointAnimator.SetBool("snapOut", true);
 			bobPointAnimator.SetBool("in", false);
@@ -690,6 +649,8 @@ public class VesselScript : MonoBehaviour {
 	
 	IEnumerator StartingVessel()
 	{
+		// when called, load in the FIRST vessel, deals with animating it too
+
 		freezeTouch = true;
 		vesselIsMoving = true;
 		piecesPicked = false;
@@ -751,6 +712,8 @@ public class VesselScript : MonoBehaviour {
 	
 	IEnumerator NextVessel()
 	{
+		// when called, load in the NEXT vessel, deals with animating it too
+
 		freezeTouch = true;
 		MusicScript.changeToSolution = true;
 		vesselIsMoving = true;
@@ -820,7 +783,7 @@ public class VesselScript : MonoBehaviour {
 	
 	
 	///////////// PICK RANDOM VESSEL PIECES
-	/// (picks random pieces and adds them to the shelved pieces menu, hides gold)
+	/// picks random pieces and adds them to the shelved pieces menu, hides gold
 	IEnumerator PickRandomPieces()
 	{
 		// repeat until the count of shelvedPieces is equal to freePieces...
@@ -951,6 +914,8 @@ public class VesselScript : MonoBehaviour {
 
 	private IEnumerator PickTitleScreenVessels()
 	{
+		// when called, picks vessels to use on the title screen
+
 		titleVessels.transform.eulerAngles = Vector3.zero;
 		explosionDirections.Clear();
 
@@ -1005,6 +970,7 @@ public class VesselScript : MonoBehaviour {
 
 	private IEnumerator CycleTitleScreenVessels()
 	{
+		// deals with cycling through the chosen title screen vessels
 		currentTitleVessel = null;
 		cycleIndex++;
 
@@ -1027,6 +993,7 @@ public class VesselScript : MonoBehaviour {
 
 	private IEnumerator FadeNewLevelBG()
 	{
+		// called to fade in the screen that appears before levels
 		levelText.text = "Level: " + GlobalValues.currentLevel;
 
 		levelBG.SetActive(true);
@@ -1047,6 +1014,7 @@ public class VesselScript : MonoBehaviour {
 
 	private IEnumerator FadeOutNewLevelBG()
 	{
+		// called to fade out the screen that appears before levels
 		levelText.enabled = false;
 		float fadeAlpha = levelBG.GetComponent<Renderer>().material.color.a;
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / 0.5f)

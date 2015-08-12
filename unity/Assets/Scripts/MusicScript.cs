@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+
+// MusicScript deals with all the music in-game
+// Queues tracks up, plays them, stops them, makes sure the right thing is playing at the right time
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-
 
 public class MusicScript : MonoBehaviour
 {
@@ -47,14 +51,6 @@ public class MusicScript : MonoBehaviour
 	
 	private void Update()
 	{
-		// if title screen, play title intro
-		// when intro over, play looped section. loop it
-
-		// if gameplay screen and gameplay mode 1, pick random gameplay track
-		// play two tracks then start over
-
-		// if gameplay screen and gameplay mode 2, play timed mode track, looped
-
 		if (startTitle == true)
 		{
 			StartCoroutine("TitleTrack");

@@ -4723,8 +4723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfd63edf3dfe4542bbfd48da4a27e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetItem: {fileID: 452101380}
-  wasRotating: 0
 --- !u!114 &452101383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4736,12 +4734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ee0f8206066845a9a2f2dbc871def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  selectedCamera: {fileID: 1368553774}
-  MINSCALE: 2
-  MAXSCALE: 4
-  minPinchSpeed: .5
-  varianceInDistances: 1
 --- !u!82 &452101384
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8051,7 +8043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 203bce52e3d4cd5488dfa0d292e08da5, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 203bce52e3d4cd5488dfa0d292e08da5, type: 3}
       propertyPath: m_LocalScale.x
@@ -14299,6 +14291,7 @@ GameObject:
   - 92: {fileID: 1368553773}
   - 124: {fileID: 1368553772}
   - 81: {fileID: 1368553771}
+  - 114: {fileID: 1368553776}
   m_Layer: 5
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14372,6 +14365,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 452101381}
   m_RootOrder: 0
+--- !u!114 &1368553776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1368553770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646b5bc27a658f447b1d929fd5ffbd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 3
+  showGeneratedNormals: 0
+  offsetScale: .200000003
+  blurRadius: 18
+  edgeThresholdMin: .0500000007
+  edgeThreshold: .200000003
+  edgeSharpness: 4
+  dlaaSharp: 0
+  ssaaShader: {fileID: 4800000, guid: b3728d1488b02490cbd196c7941bf1f8, type: 3}
+  dlaaShader: {fileID: 4800000, guid: 017ca72b9e8a749058d13ebd527e98fa, type: 3}
+  nfaaShader: {fileID: 4800000, guid: ce0cb2621f6d84e21a87414e471a3cce, type: 3}
+  shaderFXAAPreset2: {fileID: 4800000, guid: 6f1418cffd12146f2a83be795f6fa5a7, type: 3}
+  shaderFXAAPreset3: {fileID: 4800000, guid: c182fa94a5a0a4c02870641efcd38cd5, type: 3}
+  shaderFXAAII: {fileID: 4800000, guid: cd5b323dcc592457790ff18b528f5e67, type: 3}
+  shaderFXAAIII: {fileID: 4800000, guid: c547503fff0e8482ea5793727057041c, type: 3}
 --- !u!1 &1370828534
 GameObject:
   m_ObjectHideFlags: 0
@@ -21874,6 +21893,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb77f33c4301f744ae9842d09883f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tetrisRot: 
+  explosionDirections: []
+  pieceMenuSlots:
+  - {fileID: 1156709761}
+  - {fileID: 578128949}
+  - {fileID: 2101630889}
+  - {fileID: 1264990787}
+  - {fileID: 2040283490}
+  - {fileID: 1701500881}
+  - {fileID: 823823571}
+  - {fileID: 2139120459}
+  - {fileID: 2106109854}
+  - {fileID: 600984699}
+  - {fileID: 1183144381}
+  - {fileID: 261600820}
+  - {fileID: 282924792}
+  - {fileID: 1041734184}
+  - {fileID: 1545355417}
+  currentVessel: {fileID: 0}
+  currentShadow: {fileID: 0}
+  touchPlane: {fileID: 1812835229}
+  bobPoint: {fileID: 1786958645}
+  depthSliderMenu: {fileID: 0}
+  emptyPrefab: {fileID: 198960, guid: daeecf81c50b70e4da91b7737d1dbbce, type: 2}
+  titleEffects: {fileID: 853660615}
+  titleVessels: {fileID: 452344269}
+  cameraPoint: {fileID: 452101380}
+  levelBG: {fileID: 2134985464}
   allVessels: []
   allShadows: []
   allTitleVessels: []
@@ -21921,28 +21968,18 @@ MonoBehaviour:
   - {fileID: 100000, guid: deb064ba431e20d419e13d1b802e4bbd, type: 3}
   - {fileID: 100000, guid: 817dab7b92f3cb0448ea6fca864228eb, type: 3}
   - {fileID: 100000, guid: b10fffaaacc72bc4c930ac23e5ef5f98, type: 3}
-  pieceMenuSlots:
-  - {fileID: 1156709761}
-  - {fileID: 578128949}
-  - {fileID: 2101630889}
-  - {fileID: 1264990787}
-  - {fileID: 2040283490}
-  - {fileID: 1701500881}
-  - {fileID: 823823571}
-  - {fileID: 2139120459}
-  - {fileID: 2106109854}
-  - {fileID: 600984699}
-  - {fileID: 1183144381}
-  - {fileID: 261600820}
-  - {fileID: 282924792}
-  - {fileID: 1041734184}
-  - {fileID: 1545355417}
+  currentPieces: []
+  currentGoldPieces: []
+  empties: []
+  titleVesselPieces: []
+  shelvedPieces: []
+  placedPieces: []
   gameAudiosource: {fileID: 1810263372}
   ding: {fileID: 8300000, guid: bccb207a680ace44aa31e66ca57dfe7b, type: 3}
-  touchPlane: {fileID: 1812835229}
-  bobPoint: {fileID: 1786958645}
-  depthSliderMenu: {fileID: 0}
-  emptyPrefab: {fileID: 198960, guid: daeecf81c50b70e4da91b7737d1dbbce, type: 2}
+  sfxDrag: {fileID: 8300000, guid: 61eb94c51e65381459dbb78e5f0505ef, type: 3}
+  sfxRotate: {fileID: 8300000, guid: 354810c8843670e4a959ef260fd0c96c, type: 3}
+  sfxPutBack: {fileID: 8300000, guid: 94a2493ca95a04249a265d801ace3eb6, type: 3}
+  sfxSlide: {fileID: 8300000, guid: 41547bff9ae5cdd42b7f803887051dd8, type: 3}
   bobPointAnimator: {fileID: 1786958647}
   levelText: {fileID: 1394244013}
   pieceText: {fileID: 675811138}
@@ -21952,35 +21989,6 @@ MonoBehaviour:
   rimMat: {fileID: 2100000, guid: dfae2e63fba2a894385b8b44abc2983f, type: 2}
   shadowMat: {fileID: 2100000, guid: 90403167023161a44a1e9a576b17c781, type: 2}
   titleShadowMat: {fileID: 2100000, guid: 7051d397b1fee26489dfc90d61fab83d, type: 2}
-  currentVessel: {fileID: 0}
-  currentShadow: {fileID: 0}
-  currentPieces: []
-  currentGoldPieces: []
-  empties: []
-  shelvedPieces: []
-  placedPieces: []
-  totalPieces: 0
-  freePieces: 2
-  fingerCount: 0
-  wasRotating: 0
-  tetrisRot: 
-  currentPiecesLeft: 0
-  dragged: {fileID: 0}
-  placeablePiecePos: {x: 0, y: 0, z: 0}
-  placeablePieceRot: {x: 0, y: 0, z: 0}
-  distanceToPlace: 0
-  titleEffects: {fileID: 853660615}
-  titleVessels: {fileID: 452344269}
-  cameraPoint: {fileID: 452101380}
-  titleVesselPieces: []
-  explosionDirections: []
-  tapped: 0
-  sfxDrag: {fileID: 8300000, guid: 61eb94c51e65381459dbb78e5f0505ef, type: 3}
-  sfxRotate: {fileID: 8300000, guid: 354810c8843670e4a959ef260fd0c96c, type: 3}
-  sfxPutBack: {fileID: 8300000, guid: 94a2493ca95a04249a265d801ace3eb6, type: 3}
-  sfxSlide: {fileID: 8300000, guid: 41547bff9ae5cdd42b7f803887051dd8, type: 3}
-  currentTitleVessel: {fileID: 0}
-  levelBG: {fileID: 2134985464}
 --- !u!4 &1868226607
 Transform:
   m_ObjectHideFlags: 0
@@ -22004,6 +22012,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170d5508090166b48928ab077f884448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playMenuOpen: 0
+  settingsOpen: 0
+  aboutOpen: 0
+  volumeIsOn: 0
+  tapped: 0
+  startTouchTimer: 0
+  touchTime: 0
+  tapLength: .800000012
+  slotPositions:
+  - -2
+  - -2
+  - -2
+  - -2
+  - -3.31999993
+  - -8.34000015
+  - -13.3699999
+  - -18.3999996
+  - -23.3400002
+  - -28.4799995
+  - -33.4900017
+  - -38.3899994
+  - -43.4900017
+  - -48.5
+  - -53.4900017
+  - -58.4399986
+  playCombo: []
   titleScreen: {fileID: 1447849711}
   playScreen: {fileID: 363199135}
   galleryScreen: {fileID: 2066033425}
@@ -22020,20 +22054,32 @@ MonoBehaviour:
   popupConfirm: {fileID: 809866896}
   popupWin1: {fileID: 0}
   aboutSprites: {fileID: 973114598}
-  unlocked: {r: .184313729, g: .784313798, b: .482352972, a: 1}
-  locked: {r: .286274523, g: .286274523, b: .286274523, a: 1}
-  timedComplete: {fileID: 2100000, guid: 33c7791dc2a96a04eba4cf7061cbcee3, type: 2}
-  timedIncomplete: {fileID: 2100000, guid: c4e0ded18d04293489fbc72927a407bd, type: 2}
-  boxInactive: {fileID: 0}
-  boxActive: {fileID: 0}
-  black: {fileID: 0}
-  gameModeText: {fileID: 856537276}
   pieceSlots: {fileID: 1991611676}
   levelButtons: {fileID: 1400232721}
   fadeScreen: {fileID: 739329034}
   menuScroll: {fileID: 1039107942}
-  pieceMenuSlider: {fileID: 1184673858}
-  levelSelectScrollbar: {fileID: 0}
+  buttonModeUp: {fileID: 521019217}
+  buttonModeDown: {fileID: 1872304075}
+  bMusicUp: {fileID: 0}
+  bMusicDown: {fileID: 0}
+  bMusicUp2: {fileID: 0}
+  bMusicDown2: {fileID: 0}
+  bTimesUp: {fileID: 0}
+  bTimesDown: {fileID: 0}
+  bDataUp: {fileID: 0}
+  bDataDown: {fileID: 0}
+  bYesUp: {fileID: 700427215}
+  bYesDown: {fileID: 134854566}
+  bNoUp: {fileID: 1627743116}
+  bNoDown: {fileID: 1367743000}
+  yesSprite: {fileID: 265260138}
+  noSprite: {fileID: 1720934625}
+  bMainUp: {fileID: 0}
+  bMainDown: {fileID: 0}
+  bResumeUp: {fileID: 0}
+  bResumeDown: {fileID: 0}
+  normalDotYes: {fileID: 2131547786}
+  timedDotYes: {fileID: 981781045}
   levelSelectButtons:
   - {fileID: 608048766}
   - {fileID: 989361883}
@@ -22097,39 +22143,13 @@ MonoBehaviour:
   - {fileID: 621956586}
   - {fileID: 1908567758}
   - {fileID: 427248268}
-  gameScreenAudioSource: {fileID: 1810263372}
-  cameraPointAudioSource: {fileID: 452101384}
-  sfxPause: {fileID: 8300000, guid: 57f29543eb98f2a488bd5d52fd98a4b0, type: 3}
-  sfxUnpause: {fileID: 8300000, guid: c0fd2573f76418044972b357049172d4, type: 3}
-  touchRotate: {fileID: 452101382}
-  pinchZoom: {fileID: 452101383}
-  mainCam: {fileID: 1368553774}
-  titleSkybox: {fileID: 0}
-  playCombo: []
-  playMenuOpen: 0
-  settingsOpen: 0
-  aboutOpen: 0
-  volumeIsOn: 0
-  buttonModeUp: {fileID: 521019217}
-  buttonModeDown: {fileID: 1872304075}
-  bMusicUp: {fileID: 0}
-  bMusicDown: {fileID: 0}
-  bMusicUp2: {fileID: 0}
-  bMusicDown2: {fileID: 0}
-  bTimesUp: {fileID: 0}
-  bTimesDown: {fileID: 0}
-  bDataUp: {fileID: 0}
-  bDataDown: {fileID: 0}
-  bYesUp: {fileID: 700427215}
-  bYesDown: {fileID: 134854566}
-  bNoUp: {fileID: 1627743116}
-  bNoDown: {fileID: 1367743000}
-  yesSprite: {fileID: 265260138}
-  noSprite: {fileID: 1720934625}
-  bMainUp: {fileID: 0}
-  bMainDown: {fileID: 0}
-  bResumeUp: {fileID: 0}
-  bResumeDown: {fileID: 0}
+  settingsMusic: {fileID: 1445124265}
+  settingsTimes: {fileID: 1281085071}
+  settingsData: {fileID: 1589668855}
+  pausedMusic: {fileID: 888606634}
+  pausedMain: {fileID: 405568717}
+  pausedResume: {fileID: 654892137}
+  gameModeText: {fileID: 856537276}
   menuTimes:
   - {fileID: 61442611}
   - {fileID: 1969135736}
@@ -22151,36 +22171,22 @@ MonoBehaviour:
   - {fileID: 1032292049}
   - {fileID: 947836161}
   - {fileID: 668622660}
-  settingsMusic: {fileID: 1445124265}
-  settingsTimes: {fileID: 1281085071}
-  settingsData: {fileID: 1589668855}
-  pausedMusic: {fileID: 888606634}
-  pausedMain: {fileID: 405568717}
-  pausedResume: {fileID: 654892137}
-  tapped: 0
-  startTouchTimer: 0
-  touchTime: 0
-  tapLength: .800000012
-  normalDotYes: {fileID: 2131547786}
-  timedDotYes: {fileID: 981781045}
+  unlocked: {r: .184313729, g: .784313798, b: .482352972, a: 1}
+  locked: {r: .286274523, g: .286274523, b: .286274523, a: 1}
   clicked: {r: .286274523, g: .286274523, b: .286274523, a: 1}
-  slotPositions:
-  - -2
-  - -2
-  - -2
-  - -2
-  - -3.31999993
-  - -8.34000015
-  - -13.3699999
-  - -18.3999996
-  - -23.3400002
-  - -28.4799995
-  - -33.4900017
-  - -38.3899994
-  - -43.4900017
-  - -48.5
-  - -53.4900017
-  - -58.4399986
+  timedComplete: {fileID: 2100000, guid: 33c7791dc2a96a04eba4cf7061cbcee3, type: 2}
+  timedIncomplete: {fileID: 2100000, guid: c4e0ded18d04293489fbc72927a407bd, type: 2}
+  boxInactive: {fileID: 0}
+  boxActive: {fileID: 0}
+  black: {fileID: 0}
+  pieceMenuSlider: {fileID: 1184673858}
+  levelSelectScrollbar: {fileID: 0}
+  gameScreenAudioSource: {fileID: 1810263372}
+  cameraPointAudioSource: {fileID: 452101384}
+  sfxPause: {fileID: 8300000, guid: 57f29543eb98f2a488bd5d52fd98a4b0, type: 3}
+  sfxUnpause: {fileID: 8300000, guid: c0fd2573f76418044972b357049172d4, type: 3}
+  mainCam: {fileID: 1368553774}
+  titleSkybox: {fileID: 0}
 --- !u!114 &1868226609
 MonoBehaviour:
   m_ObjectHideFlags: 0

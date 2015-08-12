@@ -1,85 +1,47 @@
-﻿using UnityEngine;
+﻿// The following script was written by Chelsea Saunders/pixelatedcrown - provided for non-commercial use only
+
+// UIScript deals with the UI display throughout the game
+// Buttons, menus, scrollbars - it also is used to tell other scripts when screens change or when to trigger specific things
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class UIScript : MonoBehaviour {
 
-	public GameObject titleScreen, playScreen, galleryScreen, gameScreen, 
-	pauseScreen, piecesMenu, floor, cameraPoint, gameModeButton, settingsScreen, aboutScreen,
-	popupTut1, popupTut2, popupConfirm, popupWin1, aboutSprites;
-
-	public Color unlocked, locked;
-
-	public Material timedComplete, timedIncomplete, boxInactive, boxActive, black;
-
-	public Text gameModeText; //levelNumberText, topTimeText;
-
-	public GameObject pieceSlots, levelButtons, fadeScreen, menuScroll; 
-	//levelNumberBox, topTimeBox;
-
-	public Slider pieceMenuSlider;
-	public static bool resetSlider;
-	public Scrollbar levelSelectScrollbar;
-	private float slotsY;
-
+	// public
+	public bool playMenuOpen, settingsOpen, aboutOpen, volumeIsOn, tapped, startTouchTimer;
+	public static bool resetSlider, forceClose, hidePiecesMenu, levelsCompleted;
+	public float touchTime, tapLength = 0.4f;
+	public float[] slotPositions;
+	public Transform[] playCombo;
+	public GameObject titleScreen, playScreen, galleryScreen, gameScreen, pauseScreen, piecesMenu, floor, cameraPoint, 
+	gameModeButton, settingsScreen, aboutScreen,popupTut1, popupTut2, popupConfirm, popupWin1, aboutSprites,
+	pieceSlots, levelButtons, fadeScreen, menuScroll, buttonModeUp, buttonModeDown, bMusicUp, bMusicDown, bMusicUp2, 
+	bMusicDown2, bTimesUp, bTimesDown, bDataUp, bDataDown, bYesUp, bYesDown, bNoUp, bNoDown, yesSprite, noSprite, 
+	bMainUp, bMainDown, bResumeUp, bResumeDown, normalDotYes, timedDotYes;
 	public GameObject[] levelSelectButtons, pauseSpritesIncomplete, pauseSpritesComplete;
-
-	public static bool forceClose, hidePiecesMenu, levelsCompleted;
-	private bool hasFadedOut, hasFadedBlack, hasIntroFaded, freezeTouch, galleryTrigger, initialRepo;
-	private float fadeAlpha, fadeVolume;
-	
-	private int currentSelectedLevel;
-
+	public Text settingsMusic, settingsTimes, settingsData, pausedMusic, pausedMain, pausedResume, gameModeText;
+	public Text[] menuTimes;
+	public Color unlocked, locked, clicked;
+	public Material timedComplete, timedIncomplete, boxInactive, boxActive, black;
+	public Slider pieceMenuSlider;
+	public Scrollbar levelSelectScrollbar;
 	public AudioSource gameScreenAudioSource, cameraPointAudioSource;
 	public AudioClip sfxPause, sfxUnpause;
-	
 	public Camera mainCam;
-
 	public Skybox titleSkybox;
-	
-	public Transform[] playCombo;
 
-	public bool playMenuOpen, settingsOpen, aboutOpen;
-	
-	public bool volumeIsOn;
-	
-	public GameObject buttonModeUp, buttonModeDown, bMusicUp, bMusicDown, bMusicUp2, bMusicDown2, bTimesUp, bTimesDown, 
-	bDataUp, bDataDown, bYesUp, bYesDown, bNoUp, bNoDown, yesSprite, noSprite, bMainUp, bMainDown, bResumeUp, bResumeDown;
-
-	public Text[] menuTimes;
-	public Text settingsMusic, settingsTimes, settingsData, pausedMusic, pausedMain, pausedResume;
-
-	private int settingsChoice;
-
-	public bool tapped, startTouchTimer;
-	public float touchTime, tapLength = 0.4f;
-
-	public GameObject normalDotYes, timedDotYes;
-
+	// private
+	private bool hasFadedOut, hasFadedBlack, hasIntroFaded, freezeTouch, galleryTrigger, initialRepo, tutStarted;
+	private int currentSelectedLevel, settingsChoice;
+	private float fadeAlpha, fadeVolume, slotsY;
 	private GameObject currentButton;
-	public Color clicked;
 	private Color tempColor;
-
-	private bool tutStarted;
-
-	public float[] slotPositions;
 
 	void Update () 
 	{
 		slotsY = pieceSlots.transform.localPosition.y;
-
-		//5 = -8.34
-		//6 = -13.37
-		//7 = -18.4
-		//8 = -23.34
-		//9 = -28.48
-		//10 = -33.49
-		//11 = -38.39
-		//12 = -43.49
-		//13 = -48.5
-		//14 = -53.49
-		//15 = -58.44
-
 		pieceSlots.transform.localPosition = new Vector3(Mathf.Lerp(0f, slotPositions[VesselScript.currentSlotCount], 
 		                                                            pieceMenuSlider.value), slotsY, 0f);
 
@@ -91,29 +53,18 @@ public class UIScript : MonoBehaviour {
 		{
 			for (var i = 0; i < Input.touchCount; ++i) 
 			{
-				if (Input.GetTouch(i).phase == TouchPhase.Began)
-				{
-					startTouchTimer = true;
-
-				}
+				if (Input.GetTouch(i).phase == TouchPhase.Began){startTouchTimer = true;}
 
 				if ((Input.GetTouch(i).phase == TouchPhase.Moved) || (Input.GetTouch(i).phase == TouchPhase.Stationary))
 				{
-					if(touchTime < tapLength)
-					{
-						tapped = true;
-					}
-					else
-					{
-						tapped = false;
-					}
+					if(touchTime < tapLength){tapped = true;}
+					else{tapped = false;}
 				}
-
+	
 				if(Input.GetTouch(i).phase == TouchPhase.Ended) 
 				{
 					CheckTouch();
 				}
-
 			}
 		}
 
