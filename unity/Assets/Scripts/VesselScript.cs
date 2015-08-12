@@ -291,7 +291,7 @@ public class VesselScript : MonoBehaviour {
 
 						// if is during the touch when it isn't moving and within the time to be considered a tap
 						// and a piece isn't currently already being dragged around
-						if (touch.phase == TouchPhase.Stationary && touched != null && touchTime < tapLength && !VesselScript.dragging)
+						if ((touched != null) && (touchTime < tapLength && !VesselScript.dragging))
 						{
 							// record that a tap has taken place
 							tapped = true;
