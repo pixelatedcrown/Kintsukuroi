@@ -17,3 +17,5 @@ The main scripts include:
 - GlobalValues (used for holding variables that are shared across scripts)
 - GameModes (controls the differences between Normal and Timed gameplay modes)
 - DeletePlayerPrefs (strictly for deleting player preferences when it comes to deleting save data)
+
+<b>this is an <a href="https://www.androidexperiments.com/">android experiment</a></b>
